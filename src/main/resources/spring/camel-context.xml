@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="simple-route">
-            <from id="_from1" uri="file:Source?delete=true"/>
+            <from id="_from1" uri="file:/Source?delete=true"/>
             <log id="_log1" message="FileName: ${in.header.CamelFileName} Content: ${body}"/>
-            <to id="_to1" uri="file:Destination?fileName=${date:now:yyyyMMddhhmmss}.txt"/>
+            <to id="_to1" uri="file:/Destination?fileName=${date:now:yyyyMMddhhmmss}.txt"/>
         </route>
     </camelContext>
 </beans>
